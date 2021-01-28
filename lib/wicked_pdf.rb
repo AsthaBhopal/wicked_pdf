@@ -85,7 +85,7 @@ class WickedPdf
   private
 
   def in_development_mode?
-    return Rails.env == 'development' if defined?(Rails.env)
+    return Jets.env == 'development' if defined?(Jets.env)
 
     RAILS_ENV == 'development' if defined?(RAILS_ENV)
   end
@@ -95,7 +95,7 @@ class WickedPdf
   end
 
   def print_command(cmd)
-    Rails.logger.debug '[wicked_pdf]: ' + cmd
+    Jets.logger.debug '[wicked_pdf]: ' + cmd
   end
 
   def parse_options(options)
